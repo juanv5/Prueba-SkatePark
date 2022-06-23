@@ -66,16 +66,9 @@ app.get('/admin', async(req, res) => {
 
 
 
-
-
 app.get('/registro', async(req, res) => {
     res.render('Registro');
 });
-
-
-
-
-
 
 
 
@@ -101,8 +94,6 @@ app.get('/login', (req, res) => {
 });
 
 
-
-
 app.get('/datos', (req, res) => {
     const { token } = req.query;
     jwt.verify(token, secretKey, (err, decoded) => {
@@ -119,9 +110,6 @@ app.get('/datos', (req, res) => {
 });
 
 
-
-
-
 app.put('/usuario', async(req, res) => {
     const { id } = req.query;
     try {
@@ -131,10 +119,6 @@ app.put('/usuario', async(req, res) => {
         res.status(500).send(JSON.stringify(error));
     }
 });
-
-
-
-
 
 
 app.delete('/usuario', async(req, res) => {
